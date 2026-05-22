@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #080808;
+    color: #ffffff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  /* ===== BUTTONS ===== */
+  .btn-gold {
+    @apply bg-gold-500 text-black font-rajdhani font-bold px-6 py-2.5 rounded-lg 
+           transition-all duration-200 hover:bg-gold-400 hover:shadow-gold 
+           active:scale-95 tracking-wider uppercase text-sm;
+  }
+
+  .btn-outline-gold {
+    @apply border border-gold-500 text-gold-500 font-rajdhani font-semibold px-6 py-2.5 
+           rounded-lg transition-all duration-200 hover:bg-gold-500 hover:text-black 
+           active:scale-95 tracking-wider uppercase text-sm;
+  }
+
+  .btn-ghost {
+    @apply text-dark-100 font-rajdhani font-semibold px-4 py-2 rounded-lg
+           transition-all duration-200 hover:bg-dark-600 hover:text-white
+           active:scale-95 tracking-wide text-sm;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 text-white font-rajdhani font-bold px-6 py-2.5 rounded-lg 
+           transition-all duration-200 hover:bg-red-500 active:scale-95 
+           tracking-wider uppercase text-sm;
+  }
+
+  .btn-success {
+    @apply bg-emerald-600 text-white font-rajdhani font-bold px-6 py-2.5 rounded-lg 
+           transition-all duration-200 hover:bg-emerald-500 active:scale-95 
+           tracking-wider uppercase text-sm;
+  }
+
+  /* ===== CARDS ===== */
+  .card {
+    @apply bg-dark-600 border border-dark-400 rounded-xl p-6 shadow-card
+           transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply card hover:border-gold-500/40 hover:shadow-gold cursor-pointer;
+  }
+
+  .card-glass {
+    @apply backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-6;
+  }
+
+  /* ===== INPUTS ===== */
+  .input-dark {
+    @apply w-full bg-dark-700 border border-dark-400 rounded-lg px-4 py-2.5 
+           text-white placeholder-dark-100 font-rajdhani text-sm
+           focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500/30
+           transition-all duration-200;
+  }
+
+  .input-label {
+    @apply text-dark-100 font-rajdhani font-semibold text-sm mb-1.5 block tracking-wide;
+  }
+
+  .select-dark {
+    @apply w-full bg-dark-700 border border-dark-400 rounded-lg px-4 py-2.5 
+           text-white font-rajdhani text-sm cursor-pointer
+           focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500/30
+           transition-all duration-200;
+  }
+
+  /* ===== BADGES ===== */
+  .badge-gold {
+    @apply bg-gold-500/20 text-gold-400 border border-gold-500/30 
+           px-3 py-0.5 rounded-full text-xs font-rajdhani font-semibold tracking-wider;
+  }
+
+  .badge-green {
+    @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 
+           px-3 py-0.5 rounded-full text-xs font-rajdhani font-semibold;
+  }
+
+  .badge-red {
+    @apply bg-red-500/20 text-red-400 border border-red-500/30 
+           px-3 py-0.5 rounded-full text-xs font-rajdhani font-semibold;
+  }
+
+  .badge-blue {
+    @apply bg-blue-500/20 text-blue-400 border border-blue-500/30 
+           px-3 py-0.5 rounded-full text-xs font-rajdhani font-semibold;
+  }
+
+  /* ===== SECTION HEADERS ===== */
+  .section-title {
+    @apply font-orbitron text-xl font-bold text-white tracking-wider;
+  }
+
+  .section-subtitle {
+    @apply font-rajdhani text-dark-100 text-sm tracking-wide;
+  }
+
+  .gold-text {
+    @apply text-gold-500 font-orbitron font-bold;
+  }
+
+  /* ===== DIVIDERS ===== */
+  .divider-gold {
+    @apply border-t border-gold-500/20 my-4;
+  }
+
+  /* ===== STAT CARDS ===== */
+  .stat-card {
+    @apply card flex flex-col gap-2;
+  }
+
+  .stat-number {
+    @apply font-orbitron text-3xl font-bold text-gold-500;
+  }
+
+  .stat-label {
+    @apply font-rajdhani text-dark-100 text-sm tracking-wider uppercase;
+  }
+
+  /* ===== TABLE ===== */
+  .table-dark {
+    @apply w-full text-sm font-rajdhani;
+  }
+
+  .table-dark thead {
+    @apply bg-dark-700 text-dark-100 uppercase text-xs tracking-widest;
+  }
+
+  .table-dark thead th {
+    @apply px-4 py-3 text-left;
+  }
+
+  .table-dark tbody tr {
+    @apply border-t border-dark-400 hover:bg-dark-500 transition-colors;
+  }
+
+  .table-dark tbody td {
+    @apply px-4 py-3 text-white/90;
+  }
+
+  /* ===== PROGRESS BAR ===== */
+  .progress-bar {
+    @apply h-2 bg-dark-400 rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full bg-gold-gradient rounded-full transition-all duration-700;
+  }
+
+  /* ===== DROP ZONE ===== */
+  .drop-zone {
+    @apply border-2 border-dashed border-dark-400 rounded-xl p-10 text-center
+           transition-all duration-200 cursor-pointer
+           hover:border-gold-500/60 hover:bg-gold-500/5;
+  }
+
+  .drop-zone-active {
+    @apply border-gold-500 bg-gold-500/10;
+  }
+
+  /* ===== GLOW EFFECTS ===== */
+  .glow-gold {
+    text-shadow: 0 0 20px rgba(240, 185, 11, 0.5);
+  }
+
+  .border-glow-gold {
+    box-shadow: 0 0 0 1px rgba(240, 185, 11, 0.3), 0 0 20px rgba(240, 185, 11, 0.1);
+  }
+}
+
+@layer utilities {
+  .font-orbitron { font-family: 'Orbitron', monospace; }
+  .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+  .font-mono-jet { font-family: 'JetBrains Mono', monospace; }
+  
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #F0B90B, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes shimmer {
+  from { background-position: -200% center; }
+  to { background-position: 200% center; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #1e1e1e 25%, #2d2d2d 50%, #1e1e1e 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+
+/* Page transition */
+.page-enter {
+  animation: fadeInUp 0.35s ease-out both;
+}
